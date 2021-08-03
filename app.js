@@ -77,14 +77,19 @@ class UI {
         event.target.disabled = true;
         // get product from products
         let cartItem = { ...Storage.getProduct(id), amount: 1 };
+        
         // add product to cart
         cart = [...cart, cartItem];
+       
         // save cart in local storage
         Storage.saveCart(cart);
+        
         // set cart values
         this.setCartValues(cart);
+       
         // display cart item
         this.addCartItem(cartItem);
+        
         // show the cart
         this.showCart();
       });
